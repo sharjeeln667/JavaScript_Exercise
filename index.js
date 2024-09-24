@@ -241,6 +241,8 @@ let products = [
     },
 ];
 
+//////////////Excercise 03///////////
+
 function TotalQuantity(products) {
     let arry = []
     let sum = 0
@@ -266,34 +268,34 @@ console.log(TotalQuantity(products));
 
 /////////////////Excercise 02///////////////////////
 
-// function uniqueColor(products) {
-//     let arry = []
-//     let arry1 = []
-//     for (let i = 0; i < products.length; i++) {
-//         for (let j = 0; j < products[i].variations.length; j++) {
-//             arry.push(products[i].variations[j].color)
-//             arry1 = [... new Set(arry)]
-//         }
+function uniqueColor(products) {
+    let arry = []
+    let arry1 = []
+    for (let i = 0; i < products.length; i++) {
+        for (let j = 0; j < products[i].variations.length; j++) {
+            arry.push(products[i].variations[j].color)
+            arry1 = [... new Set(arry)]
+        }
 
-//     }
-//     return arry1
+    }
+    return arry1
 
-// }
+}
 
-// console.log(uniqueColor(products));
+console.log(uniqueColor(products));
 
 
 
 
 ////////////////excercise 01//////////////
 
-// function displyTitle(products) {
-//     let arry = []
-//     for (let i = 0; i < products.length; i++) {
-//         arry.push(products[i].title)
-//     }
-//     return arry
-// }
+function displyTitle(products) {
+    let arry = []
+    for (let i = 0; i < products.length; i++) {
+        arry.push(products[i].title)
+    }
+    return arry
+}
 
-// let title = displyTitle(products)
-// console.log(title);
+let title = displyTitle(products)
+console.log(title);
