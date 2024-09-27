@@ -241,25 +241,112 @@ let products = [
     },
 ];
 
+// Exercise 1
+// Get all product titles and display them in array format.
+// Example: ['Sony LED 40 inch', 'Mobile', 'Bike']
+// Try with function or without function
+
+// Exercise 2
+// Get all the unique colors from the product variations.
+// Example: ['black', 'red', 'silver']
+// Try with function or without function
+
+// Exercise 3
+// Get the total quantity of all products.
+// Example: 23
+// Try with function or without function
+
+// Exercise 4
+// Get all product reviews where the status is true.
+// Example: [{ review1 }, { review3 }, ...]
+// Try with function or without function
+
+// Exercise 5
+// Find the most expensive variation across all products.
+// Example: { color: 'silver', price: 55000 }
+// Try with function or without function
+
+// Exercise 6
+// Get the average rating of all reviews.
+// Example: 4.2
+
+// Exercise 7
+// find a Product by id if not found return empty object
+// Example: {...}
+
+
+
+/////////Excercise 05///////
+
+function GetExpensiveProduct(products) {
+    let ExpensiveProduct = null
+    for (let i = 0; i < products.length; i++) {
+
+        for (let j = 0; j < products[i].variations.length; j++) {
+            let MostxpensiveProduct = products[i].variations[j]
+            // console.log(MostxpensiveProduct);
+            if (ExpensiveProduct === null || MostxpensiveProduct.price > ExpensiveProduct.price) {
+                ExpensiveProduct = MostxpensiveProduct
+            }
+        }
+    }
+    return ExpensiveProduct
+}
+console.log(GetExpensiveProduct(products));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//////////Excercise 04////////
+
+// function GetProductreviews(products) {
+//     let arry = []
+//     for (let i = 0; i < products.length; i++) {
+//         for (let j = 0; j < products[i].reviews.length; j++) {
+//             let reviews = products[i].reviews[j]
+//             if (reviews.status === true) {
+//                 arry.push(reviews.status + " " + reviews.user)
+//             }
+
+//         }
+//     }
+//     return arry
+// }
+
+// console.log(GetProductreviews(products));
+
+
+
+
+
+
+
+
+
 //////////////Excercise 03///////////
 
-function TotalQuantity(products) {
-    let arry = []
-    let sum = 0
-    for (let i = 0; i < products.length; i++) {
-        for (let j = 0; j < products[i].variations.length; j++) {
-            arry.push(products[i].variations[j].quantity)
-
-            sum += arry
-
-        }
-        return sum
-
-    }
-
-}
-
-console.log(TotalQuantity(products));
+// function TotalQuantity(products) {
+//     let arry = []
+//     let sum = 0
+//     for (let i = 0; i < products.length; i++) {
+//         for (let j = 0; j < products[i].variations.length; j++) {
+//             arry.push(products[i].variations[j].quantity)
+//             sum += arry
+//         }
+//         return sum
+//     }
+// }
+// console.log(TotalQuantity(products));
 
 
 
@@ -268,34 +355,32 @@ console.log(TotalQuantity(products));
 
 /////////////////Excercise 02///////////////////////
 
-function uniqueColor(products) {
-    let arry = []
-    let arry1 = []
-    for (let i = 0; i < products.length; i++) {
-        for (let j = 0; j < products[i].variations.length; j++) {
-            arry.push(products[i].variations[j].color)
-            arry1 = [... new Set(arry)]
-        }
-
-    }
-    return arry1
-
-}
-
-console.log(uniqueColor(products));
+// function uniqueColor(products) {
+//     let arry = []
+//     for (let i = 0; i < products.length; i++) {
+//         for (let j = 0; j < products[i].variations.length; j++) {
+//             let unique = products[i].variations[j].color
+//             if (arry.indexOf(unique) === -1) {
+//                 arry.push(unique)
+//             }
+//         }
+//     }
+//     return arry
+// }
+// console.log(uniqueColor(products));
 
 
 
 
 ////////////////excercise 01//////////////
 
-function displyTitle(products) {
-    let arry = []
-    for (let i = 0; i < products.length; i++) {
-        arry.push(products[i].title)
-    }
-    return arry
-}
+// function displyTitle(products) {
+//     let arry = []
+//     for (let i = 0; i < products.length; i++) {
+//         arry.push(products[i].title)
+//     }
+//     return arry
+// }
 
-let title = displyTitle(products)
-console.log(title);
+// let title = displyTitle(products)
+// console.log(title);
