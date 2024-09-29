@@ -246,114 +246,23 @@ let products = [
 // Example: ['Sony LED 40 inch', 'Mobile', 'Bike']
 // Try with function or without function
 
-// Exercise 2
-// Get all the unique colors from the product variations.
-// Example: ['black', 'red', 'silver']
-// Try with function or without function
-
-// Exercise 3
-// Get the total quantity of all products.
-// Example: 23
-// Try with function or without function
-
-// Exercise 4
-// Get all product reviews where the status is true.
-// Example: [{ review1 }, { review3 }, ...]
-// Try with function or without function
-
-// Exercise 5
-// Find the most expensive variation across all products.
-// Example: { color: 'silver', price: 55000 }
-// Try with function or without function
-
-// Exercise 6
-// Get the average rating of all reviews.
-// Example: 4.2
-
-// Exercise 7
-// find a Product by id if not found return empty object
-// Example: {...}
-
-
-
-/////////Excercise 05///////
-
-function GetExpensiveProduct(products) {
-    let ExpensiveProduct = null
-    for (let i = 0; i < products.length; i++) {
-
-        for (let j = 0; j < products[i].variations.length; j++) {
-            let MostxpensiveProduct = products[i].variations[j]
-            // console.log(MostxpensiveProduct);
-            if (ExpensiveProduct === null || MostxpensiveProduct.price > ExpensiveProduct.price) {
-                ExpensiveProduct = MostxpensiveProduct
-            }
-        }
-    }
-    return ExpensiveProduct
-}
-console.log(GetExpensiveProduct(products));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//////////Excercise 04////////
-
-// function GetProductreviews(products) {
+// function displyTitle(products) {
 //     let arry = []
 //     for (let i = 0; i < products.length; i++) {
-//         for (let j = 0; j < products[i].reviews.length; j++) {
-//             let reviews = products[i].reviews[j]
-//             if (reviews.status === true) {
-//                 arry.push(reviews.status + " " + reviews.user)
-//             }
-
-//         }
+//         arry.push(products[i].title)
 //     }
 //     return arry
 // }
 
-// console.log(GetProductreviews(products));
+// let title = displyTitle(products)
+// console.log(title);
 
 
 
-
-
-
-
-
-
-//////////////Excercise 03///////////
-
-// function TotalQuantity(products) {
-//     let arry = []
-//     let sum = 0
-//     for (let i = 0; i < products.length; i++) {
-//         for (let j = 0; j < products[i].variations.length; j++) {
-//             arry.push(products[i].variations[j].quantity)
-//             sum += arry
-//         }
-//         return sum
-//     }
-// }
-// console.log(TotalQuantity(products));
-
-
-
-
-
-
-/////////////////Excercise 02///////////////////////
+// Exercise 2
+// Get all the unique colors from the product variations.
+// Example: ['black', 'red', 'silver']
+// Try with function or without function
 
 // function uniqueColor(products) {
 //     let arry = []
@@ -369,18 +278,92 @@ console.log(GetExpensiveProduct(products));
 // }
 // console.log(uniqueColor(products));
 
+// Exercise 3
+// Get the total quantity of all products.
+// Example: 23
+// Try with function or without function
+
+// function TotalQuantity(products) {
+//     let arry = []
+//     let sum = 0
+//     for (let i = 0; i < products.length; i++) {
+//         for (let j = 0; j < products[i].variations.length; j++) {
+//             arry.push(products[i].variations[j].quantity)
+//             sum += arry
+//         }
+//         return sum
+//     }
+// }
+// console.log(TotalQuantity(products));
 
 
+// Exercise 4
+// Get all product reviews where the status is true.
+// Example: [{ review1 }, { review3 }, ...]
+// Try with function or without function
 
-////////////////excercise 01//////////////
-
-// function displyTitle(products) {
+// function GetProductreviews(products) {
 //     let arry = []
 //     for (let i = 0; i < products.length; i++) {
-//         arry.push(products[i].title)
+//         for (let j = 0; j < products[i].reviews.length; j++) {
+//             let reviews = products[i].reviews[j]
+//             if (reviews.status === true) {
+//                 arry.push(reviews.status + " " + reviews.user)
+//             }
+//        }
 //     }
 //     return arry
 // }
+// console.log(GetProductreviews(products));
 
-// let title = displyTitle(products)
-// console.log(title);
+// Exercise 5
+// Find the most expensive variation across all products.
+// Example: { color: 'silver', price: 55000 }
+// Try with function or without function
+
+// function GetExpensiveProduct(products) {
+//     let ExpensiveProduct = null
+//     for (let i = 0; i < products.length; i++) {
+//         for (let j = 0; j < products[i].variations.length; j++) {
+//             let MostxpensiveProduct = products[i].variations[j]
+//             // console.log(MostxpensiveProduct);
+//             if (ExpensiveProduct === null || MostxpensiveProduct.price > ExpensiveProduct.price) {
+//                 ExpensiveProduct = MostxpensiveProduct
+//             }
+//         }
+//     }
+//     return ExpensiveProduct
+// }
+// console.log(GetExpensiveProduct(products));
+
+// Exercise 6
+// Get the average rating of all reviews.
+// Example: 4.2
+
+// function GetRating(products) {
+//     let sum = 0
+//     let avg = 0
+//     for (let i = 0; i < products.length; i++) {
+//         for (let j = 0; j < products[i].reviews.length; j++) {
+//             let TotalRating = products[i].reviews[j]
+//             // console.log(TotalRating.rating);
+//             sum += TotalRating.rating
+//         }
+//     }
+//     return sum
+// }
+// console.log(GetRating(products));
+
+// Exercise 7
+// find a Product by id if not found return empty object
+// Example: {...}
+
+// function FindProduct(products, productId) {
+//     for (let i = 0; i < products.length; i++) {
+//         if (productId === products[i].id) {
+//             return products[i].id + " " + products[i].title
+//         }
+//     }
+//     return "Product Not Found"
+// }
+// console.log(FindProduct(products, 106));
